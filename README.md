@@ -4,8 +4,8 @@ Demo test automation framework using supertest
 [![E2E tests](https://github.com/AndreivanP/jsonplaceholder-api-test/actions/workflows/ci.yml/badge.svg)](https://github.com/AndreivanP/jsonplaceholder-api-test/actions/workflows/ci.yml)
 
 # Pre Requirements
-- It's needed to have [npm][npm-version] version greater than `8.0.0` installed.
-- It's needed to have [node js][node] version greater than `14.0.0` installed.
+- It's needed to have `npm` version greater than `8.0.0` installed.
+- It's needed to have `node js` version greater than `14.0.0` installed.
 
 ## Setup
 
@@ -27,9 +27,9 @@ Run `npm test`, to run all the tests.
 
 * [Supertest][test-tool], to create and run API tests.
 * [Faker][data-tool], to generate randon data for tests.
-* [Cross-env][env-toll], to create environment variables on the fly.
+* [Cross-env][env-tool], to create environment variables on the fly.
 * [Mocha][runner-tool], to have `it` and `describe` structure and test runner.
-* [Chai][asserting-tool], to perform the asserts.
+* [Chai][assertion-tool], to perform the asserts.
 
 #### Test Cases
 
@@ -48,7 +48,7 @@ Run `npm test`, to run all the tests.
 # Future Improvements
 
 - Add a report tool such as mochaawesome.
-- Create a mock structure to work with custom data. Suggested tool is [mockend][mock-tool]
+- Create a mock structure to work with custom data. Suggested tool is `mockend`
 
 <!-- Links list -->
 [test-tool]: https://www.npmjs.com/package/supertest
@@ -56,6 +56,3 @@ Run `npm test`, to run all the tests.
 [env-tool]: https://www.npmjs.com/package/cross-env
 [runner-tool]: https://mochajs.org/
 [assertion-tool]: https://www.chaijs.com/api/assert/
-[node]: [https://nodejs.org/en/]
-[npm-version]: [https://docs.npmjs.com/]
-[mock-tool]: [https://mockend.com/]

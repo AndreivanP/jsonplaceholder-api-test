@@ -26,10 +26,10 @@ Run `npm test`, to run all the tests.
 ### Test suite
 
 * [Supertest][test-tool], to create and run API tests.
-* [Faker][data-tool], to generate randon data for tests.
+* [Faker][data-tool], to generate random data for tests.
 * [Cross-env][env-tool], to create environment variables on the fly.
 * [Mocha][runner-tool], to have `it` and `describe` structure and test runner.
-* [Chai][assertion-tool], to perform the asserts.
+* [Chai][assertion-tool], to perform assertions.
 
 #### Test Cases
 
@@ -40,12 +40,12 @@ Run `npm test`, to run all the tests.
 - Test cases were built to be independent that means it's possible to run a specific test case without the need to run another test case before.
 - `.mocharc.js` is the mocha configuration file.
 
-### CI/CD
-## Docker
+## CI/CD
+### Docker
 
-- It's possible to execute tests from a docker container. For that there are two files: `Dockerfile` and `docker-compose.yml`. In order to build the image you can run `docker-compose -f docker-compose.yml build` and in order to create the container run `docker-compose -f docker-compose.yml up -d` and to run all the tests from docker container you can run `docker-compose -f docker-compose.yml exec -T api-runner npm test`. Note that this is optional and it's mandatory to have docker installed on your localhost.
+- It's possible to execute tests from a docker container. For that there are two files: `Dockerfile` and `docker-compose.yml`. In order to build the image you can run `docker-compose -f docker-compose.yml build` and in order to create the container run `docker-compose -f docker-compose.yml up -d` and to run all the tests from docker container you can run `docker-compose -f docker-compose.yml exec -T api-runner npm test`. Note that this is optional and in order to execute it's mandatory to have `docker` installed on your localhost.
 
-## Github Actions
+### Github Actions
 
 - There is a Github actions workflow which uses the docker setup mentioned above and it is triggered every time a PR is openned on main branch.
 

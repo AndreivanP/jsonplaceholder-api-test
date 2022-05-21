@@ -1,9 +1,10 @@
 const route = '/users'
 const chai = require('chai')
+const commonMethods = require('../utils/commonMethods')
 
 describe(route + ' GET', () => {
     it('Get an user and validate the whole response payload', async () => {
-        const { body } = await request.get(route + '/1').expect(200)
+        const { body } = await commonMethods.performGetById(route, 1, 200);
 
         chai.assert.deepEqual(body, {
             "id": 1,
@@ -31,7 +32,7 @@ describe(route + ' GET', () => {
     });
 
     it('Get an user and validate the key fields', async () => {
-        const { body } = await request.get(route + '/10').expect(200);
+        const { body } = await commonMethods.performGetById(route, 10, 200);
 
         chai.assert.equal(body.name, 'Clementina DuBuque');
         chai.assert.equal(body.email, 'Rey.Padberg@karina.biz');
@@ -58,7 +59,7 @@ describe(route + ' GET', () => {
     });
 
     it('Get a nonexistent user', async () => {
-        const { body } = await request.get(route + '/11').expect(404);
+        const { body } = await commonMethods.performGetById(route, 11, 404);
 
         chai.assert.deepEqual(body, {});
     });

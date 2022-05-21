@@ -41,9 +41,13 @@ Run `npm test`, to run all the tests.
 - `.mocharc.js` is the mocha configuration file.
 
 ### CI/CD
+## Docker
 
 - It's possible to execute tests from a docker container. For that there are two files: `Dockerfile` and `docker-compose.yml`. In order to build the image you can run `docker-compose -f docker-compose.yml build` and in order to create the container run `docker-compose -f docker-compose.yml up -d` and to run all the tests from docker container you can run `docker-compose -f docker-compose.yml exec -T api-runner npm test`. Note that this is optional and it's mandatory to have docker installed on your localhost.
-- There is a github actions workflow which uses the docker setup mentioned above and it is triggered every time a PR is open on main branch.
+
+## Github Actions
+
+- There is a Github actions workflow which uses the docker setup mentioned above and it is triggered every time a PR is openned on main branch.
 
 # Future Improvements
 

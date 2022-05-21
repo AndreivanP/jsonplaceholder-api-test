@@ -1,0 +1,25 @@
+{
+  "name": "jsonplaceholder-api-test",
+  "version": "1.0.0",
+  "description": "Example of API test automation using Supertest and Mocha",
+  "scripts": {
+    "test": "cross-env ENV='local' mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndreivanP/jsonplaceholder-api-test.git"
+  },
+  "author": "Andreivan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AndreivanP/jsonplaceholder-api-test/issues"
+  },
+  "homepage": "https://github.com/AndreivanP/jsonplaceholder-api-test#readme",
+  "dependencies": {
+    "@faker-js/faker": "^6.3.1",
+    "chai": "^4.3.6",
+    "cross-env": "^7.0.3",
+    "mocha": "^10.0.0",
+    "supertest": "^6.2.3"
+  }
+}

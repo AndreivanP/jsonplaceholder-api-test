@@ -15,9 +15,9 @@ describe(route + ' PUT', () => {
     it('Update an user removing the address', async () => {
         const userId = 6
         delete utils.baseRequestUserPayload.address
-        let removeAddress = utils.baseRequestUserPayload
+        let removedAddress = utils.baseRequestUserPayload
 
-        const { body } = await request.put(route + `/${userId}`).send(removeAddress).expect(200);
+        const { body } = await request.put(route + `/${userId}`).send(removedAddress).expect(200);
 
         utils.baseRequestUserPayload.id = userId;
         chai.assert.deepEqual(body, utils.baseRequestUserPayload);

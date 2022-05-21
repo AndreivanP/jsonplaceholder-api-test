@@ -37,4 +37,4 @@ describe(route + ' PATCH', () => {
 
         chai.assert.deepEqual(body, userPhone);
     });
-})
+});

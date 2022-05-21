@@ -8,5 +8,5 @@ describe(route + ' POST', () => {
         const { body } = await request.post(route).send(utils.baseRequestUserPayload).expect(201);
 
         chai.assert.deepEqual(body, utils.baseResponseUserPayload);
-    })
-})
+    });
+});

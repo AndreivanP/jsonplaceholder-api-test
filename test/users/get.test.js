@@ -28,7 +28,7 @@ describe(route + ' GET', () => {
                 "bs": "harness real-time e-markets"
             }
         })
-    })
+    });
 
     it('Get an user and validate the key fields', async () => {
         const { body } = await request.get(route + '/10').expect(200);
@@ -47,7 +47,7 @@ describe(route + ' GET', () => {
                 "lng": "57.2232"
             }
         });
-    })
+    });
 
     it('Search for an user by email', async () => {
         const userEmail = 'Julianne.OConner@kory.org'
@@ -55,18 +55,18 @@ describe(route + ' GET', () => {
 
         chai.assert.equal(body[0].name, 'Patricia Lebsack');
         chai.assert.equal(body[0].email, userEmail);
-    })
+    });
 
     it('Get a nonexistent user', async () => {
         const { body } = await request.get(route + '/11').expect(404);
 
         chai.assert.deepEqual(body, {});
-    })
+    });
 
     it('Search for an user by a nonexistent email', async () => {
         const userEmail = 'invalid@test.org'
         const { body } = await request.get(route + `?email=${userEmail}`).expect(200);
 
         chai.assert.deepEqual(body, []);
-    })
+    });
 })

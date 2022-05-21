@@ -1,13 +1,13 @@
 const route = '/users'
 const chai = require('chai')
-const utils = require('../utils')
+const commonMethods = require('../utils/commonMethods')
 
 describe(route + ' PATCH', () => {
 
     it('Update an user name', async () => {
         const userId = 7
         const userName = "Patched"
-        let beforePatch = await request.get(route + `/${userId}`).expect(200)
+        let beforePatch = await commonMethods.performGetById(route, userId, 200);
 
         const { body } = await request.patch(route + `/${userId}`).send({ "name": userName }).expect(200);
 
@@ -19,7 +19,7 @@ describe(route + ' PATCH', () => {
     it('Update an user email', async () => {
         const userId = 7
         const userEmail = "patched@gmail.com"
-        let beforePatch = await request.get(route + `/${userId}`).expect(200)
+        let beforePatch = await commonMethods.performGetById(route, userId, 200);
 
         const { body } = await request.patch(route + `/${userId}`).send({ "email": userEmail }).expect(200);
 

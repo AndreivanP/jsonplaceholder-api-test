@@ -1,0 +1,19 @@
+name: CI workflow
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-deploy-run-api-tests:
+    runs-on: ubuntu-latest
+    steps:
+       - uses: actions/checkout@v2
+         with:
+          ref: ${{ github.event.pull_request.head.sha }}
+       - name: Build docker image
+         run: docker-compose -f docker-compose.yml build
+       - name: Create docker containers api runner
+         run: docker-compose -f docker-compose.yml up -d
+       - name: Run e2e tests within api runner container
+         run: docker-compose -f docker-compose.yml exec -T api-runner npm test
